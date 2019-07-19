@@ -1,0 +1,68 @@
+/*
+** Setup - Variables
+** -----------------------------------------------------------------------------*/
+
+// Color definitions
+$color-primary:         #F38181 !default;
+$color-black:           #333333 !default;
+$color-gray-dark:       #666666 !default;
+$color-gray:            #808080 !default;
+$color-gray-light:      #CDCDCD !default;
+$color-gray-lighter:    #E6E6E6 !default;
+$color-gray-lightest:   #EDEDED !default;
+$color-white:           #FAFAFA !default;
+
+$color-status-success:  #A8CA27 !default;
+$color-status-warning:  #FDAD00 !default;
+$color-status-error:    #F74444 !default;
+
+// Z-indexes
+$zindex-negative:       -1 !default;
+$zindex-neutral:        0 !default;
+$zindex-base:           1 !default;
+$zindex-utils:          5 !default;
+$zindex-head:           10 !default;
+$zindex-nav:            15 !default;
+$zindex-dropdown:       20 !default;
+$zindex-popup:          25 !default;
+
+// Font definitions
+$font-poppins:          'Poppins', 'Arial', 'Helvetica Neue', Helvetica, sans-serif !default;
+$font-color:            $color-gray !default;
+$font-family:           $font-poppins !default;
+$font-size:             1.6em !default;
+$font-line-height:      1.875 !default;
+
+// Others
+$separator:             2rem !default;
+$transition-speed:      0.25s !default;
+
+// Base path for assets
+$base-path:             '..' !default;
+
+// Grid definitions
+$breakpoints: (
+  xs: (
+    min-width: 0,
+    container: 450px,
+    gutter: 20px,
+    columns: 4
+  ),
+  sm: (
+    min-width: 490px,
+    gutter: 20px,
+    columns: 6
+  ),
+  md: (
+    min-width: 680px,
+    container: 640px,
+    gutter: 20px,
+    columns: 6
+  ),
+  lg: (
+    min-width: 980px,
+    container: 940px,
+    gutter: 20px,
+    columns: 12
+  )
+) !default;

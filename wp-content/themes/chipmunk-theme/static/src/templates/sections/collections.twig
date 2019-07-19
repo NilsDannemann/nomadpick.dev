@@ -1,0 +1,31 @@
+<div class="section">
+  <div class="container">
+    <h3 class="heading heading_md">Collections</h3>
+
+    <div class="row">
+      {% set collections = ['Design', 'Development', 'Technology', 'Products', 'Apps', 'Podcasts', 'Startups', 'Business', 'Marketing', 'Writings', 'Newsletters', 'Typography', 'Bots', 'Themes', 'Photography'] %}
+
+      {% for collection in collections %}
+        <a href="#" class="tile column column_md-3 column_lg-4">
+          <div class="tile__image">
+            <img src="http://placehold.it/300x210?text=Resource.png" alt="" />
+            <img src="http://placehold.it/300x210?text=Resource.png" alt="" />
+            <img src="http://placehold.it/300x210?text=Resource.png" alt="" />
+          </div>
+
+          <div class="tile__content tile__content_dimmed">
+            <div>
+              <h3 class="tile__title">{{ collection }}</h3>
+              <p class="tile__copy">View this collection&nbsp;<i class="icon icon_arrow"></i></p>
+            </div>
+
+            <ul class="stats">
+              <li class="stats__item" title="Resources"><i class="icon icon_link"></i> {{ random(200) }}</li>
+            </ul>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- /.section -->

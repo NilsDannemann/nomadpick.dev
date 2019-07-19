@@ -1,0 +1,87 @@
+/*
+** Module - Stats
+** -----------------------------------------------------------------------------*/
+
+.stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin-top: -1rem;
+}
+
+.stats__item {
+  margin-top: 1rem;
+
+  &:not(:last-child) {
+    margin-right: $separator;
+  }
+
+  a:hover {
+    color: $color-black;
+  }
+
+  .icon {
+    margin-right: 0.25rem;
+    margin-top: -2px;
+    font-size: 1.6rem;
+    line-height: inherit;
+    vertical-align: middle;
+
+    &.icon_arrow-up {
+      font-size: 1.2rem;
+    }
+  }
+
+  &_sided {
+    flex-grow: 1;
+    margin-right: 0;
+    text-align: right;
+  }
+}
+
+.stats__button {
+  display: inline-block;
+  padding: 8px 10px;
+  border: 1px solid $color-gray;
+  border-radius: 1.1em;
+  font-size: 1.4rem;
+  line-height: 1;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-black;
+    border-color: $color-black;
+  }
+
+  &.is-active {
+    background-color: $color-primary;
+    border-color: transparent;
+    color: $color-white;
+  }
+
+  &.is-loading {
+    @include loader;
+
+    span {
+      color: transparent;
+    }
+  }
+}
+
+.stats__tag {
+  & + &::before {
+    content: ', ';
+    color: $color-gray;
+  }
+
+  &_dimmed {
+    color: lighten($color-gray, 20%);
+
+    &::before {
+      color: lighten($color-gray, 20%);
+    }
+  }
+}

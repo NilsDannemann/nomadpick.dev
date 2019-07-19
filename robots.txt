@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Sitemap: https://www.nomadpick.com/post-sitemap.xml
+Sitemap: https://www.nomadpick.com/page-sitemap.xml
+Sitemap: https://www.nomadpick.com/resource-sitemap.xml
+Sitemap: https://www.nomadpick.com/resource-collection-sitemap.xml
+Sitemap: https://www.nomadpick.com/resource-tag-sitemap.xml

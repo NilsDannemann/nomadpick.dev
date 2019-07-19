@@ -1,2 +1,0 @@
-# nomadpick.dev
-Nomadpick Repo

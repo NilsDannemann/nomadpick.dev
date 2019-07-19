@@ -1,0 +1,122 @@
+/*
+** Module - Comment
+** -----------------------------------------------------------------------------*/
+
+.comment {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: $separator;
+  line-height: 1.65;
+
+  @include breakpoint(md) {
+    margin-top: ($separator * 2);
+  }
+
+  & + .children {
+    margin-left: $separator;
+
+    @include breakpoint(md) {
+      margin-left: ($separator * 3);
+    }
+  }
+}
+
+.comment__image {
+  margin-right: $separator;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.comment__info {
+  flex: 1;
+}
+
+.comment__title {
+  display: inline-block;
+  margin-right: 0.5em;
+  color: $color-black;
+  font-weight: bold;
+  vertical-align: middle;
+
+  @include breakpoint(md) {
+    font-size: 2.2rem;
+  }
+}
+
+.comment__date {
+  display: none;
+
+  @include breakpoint(sm) {
+    display: inline-block;
+    color: $color-gray-light;
+    opacity: 0;
+    transition: opacity $transition-speed;
+    vertical-align: middle;
+
+    .comment:hover & {
+      opacity: 1;
+    }
+  }
+}
+
+.comment__content {
+  @include breakpoint(md) {
+    font-size: 2.2rem;
+  }
+
+  p:not(:first-child) {
+    margin-top: 0.8em;
+  }
+}
+
+.comment__reply {
+  margin-top: 0.5em;
+
+  a {
+    display: inline-block;
+    font-size: 1.4rem;
+
+    &::before {
+      @extend .icon;
+      @extend .icon_corner-down-left;
+      margin-right: 1em;
+      font-size: 1.2rem;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      color: $color-black;
+    }
+  }
+}
+
+.comment__note {
+  margin-top: 1em;
+  font-style: italic;
+}
+
+.comment-respond {
+  &:not(:first-child) {
+    margin-top: ($separator * 2);
+
+    @include breakpoint(md) {
+      margin-top: ($separator * 4);
+    }
+  }
+
+  p {
+    text-align: left;
+
+    a {
+      &:hover {
+        color: $color-black;
+      }
+    }
+  }
+
+  .form-submit .form__field {
+    margin-top: ($separator * 2);
+  }
+}

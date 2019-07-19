@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//www.nomadpick.com/main-sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://www.nomadpick.com/</loc>
+		<lastmod>2019-03-07T11:33:36+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://www.nomadpick.com/subscribe/</loc>
+		<lastmod>2019-03-07T11:33:37+00:00</lastmod>
+		<image:image>
+			<image:loc>https://www.nomadpick.com/wp-content/uploads/2018/03/Logo.svg</image:loc>
+			<image:caption><![CDATA[nomadpick logo]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.nomadpick.com/wp-content/uploads/2018/08/Facebook.svg</image:loc>
+			<image:title><![CDATA[Facebook]]></image:title>
+			<image:caption><![CDATA[Facebook]]></image:caption>
+		</image:image>
+		<image:image>
+			<image:loc>https://www.nomadpick.com/wp-content/uploads/2018/08/Twitter.svg</image:loc>
+			<image:title><![CDATA[Twitter]]></image:title>
+			<image:caption><![CDATA[Twitter]]></image:caption>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://www.nomadpick.com/all-resources/</loc>
+		<lastmod>2019-03-07T11:33:36+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://www.nomadpick.com/about/</loc>
+		<lastmod>2019-03-07T11:33:34+00:00</lastmod>
+	</url>
+</urlset>

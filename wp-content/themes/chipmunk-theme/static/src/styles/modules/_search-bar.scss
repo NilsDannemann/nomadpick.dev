@@ -1,0 +1,102 @@
+/*
+** Module - Search-bar
+** -----------------------------------------------------------------------------*/
+
+.search-bar {
+  @include bordered-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $zindex-head + 1;
+  padding-top: $separator * 0.5;
+  padding-bottom: $separator * 0.5;
+  background-color: $color-white;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: $transition-speed * 1.5;
+
+  @include breakpoint(md) {
+    padding-top: $separator;
+    padding-bottom: $separator;
+  }
+
+  @include breakpoint(lg) {
+    padding-top: $separator * 1.5;
+    padding-bottom: $separator * 1.5;
+  }
+
+  .has-search-open & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+}
+
+.search-bar__icon {
+  display: block;
+  margin-right: $separator;
+  font-size: 2.2rem;
+  line-height: 1;
+  transition: color $transition-speed;
+
+  @include breakpoint(md) {
+    margin-right: 2.5rem;
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.search-bar__form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  input {
+    width: 100%;
+    max-width: 615px;
+    padding: 3px 0;
+    border-bottom: 1px solid currentColor;
+    border-radius: 0;
+    color: $color-gray;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    -webkit-appearance: none;
+
+    &::placeholder {
+      color: $color-gray;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.search-bar__close {
+  display: block;
+  padding: 1rem;
+  margin: -1rem;
+  margin-left: 1rem;
+  color: $color-black;
+  font-size: 2.2rem;
+  line-height: 1;
+
+  @include breakpoint(md) {
+    margin-left: 1.5rem;
+    font-size: 2.4rem;
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+}

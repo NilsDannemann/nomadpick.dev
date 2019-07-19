@@ -1,0 +1,135 @@
+/*
+** Module - Form
+** -----------------------------------------------------------------------------*/
+
+.form {
+  margin-top: $separator;
+  text-align: center;
+
+  @include breakpoint(md) {
+    margin-top: $separator * 2;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  textarea {
+    display: inline-block;
+    width: 100%;
+    padding: 5px 0;
+    background-color: transparent;
+    border-bottom: 2px solid currentColor;
+    border-radius: 0;
+    color: $color-black;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    resize: none;
+    vertical-align: middle;
+
+    @include breakpoint(lg) {
+      border-bottom-width: 3px;
+      font-size: 2.2rem;
+    }
+
+    &::placeholder {
+      color: $color-black;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .parsley-errors-list.filled {
+    margin-top: 0.5rem;
+    text-align: left;
+
+    li {
+      color: $color-status-error;
+    }
+  }
+
+  &_compact {
+    input,
+    textarea {
+      text-align: center;
+    }
+
+    .parsley-errors-list.filled {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.form__field {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &:not(:first-child) {
+    margin-top: $separator * 1.5;
+  }
+
+  .form_compact &:not(:first-child) {
+    margin-top: $separator;
+  }
+
+  &_separated:not(:first-child) {
+    @include breakpoint(md) {
+      margin-top: $separator * 3;
+    }
+  }
+
+  &_center {
+    flex-direction: column;
+    align-items: center;
+
+    .g-recaptcha {
+      margin-bottom: 2rem;
+
+      @include breakpoint(md) {
+        margin-top: 2rem;
+        margin-bottom: -1rem;
+      }
+    }
+
+    .button {
+      @include breakpoint(md) {
+        margin-top: $separator * 1.5;
+
+        .form_compact & {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+.form__child {
+  width: 100%;
+
+  &:not(:first-child) {
+    margin-top: $separator * 1.5;
+  }
+
+  @include breakpoint(md) {
+    width: 47.5%;
+
+    &:nth-child(-n+2) {
+      margin-top: 0;
+    }
+  }
+}
+
+.form__message {
+  margin-top: $separator;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  @include breakpoint(md) {
+    margin-top: $separator * 2;
+  }
+}

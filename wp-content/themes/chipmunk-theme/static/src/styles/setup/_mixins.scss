@@ -1,0 +1,116 @@
+/*
+** Setup - Mixins
+** -----------------------------------------------------------------------------*/
+
+/*
+** Bordered box
+**/
+@mixin bordered-box() {
+  position: relative;
+  z-index: $zindex-base;
+  box-shadow: 0 1px 0 0 rgba($color-black, 0.075),
+              0 -1px 0 0 rgba($color-black, 0.075);
+}
+
+/*
+** Add loading indicator
+**/
+@mixin loader($size: 1.5rem) {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    margin-top: -($size / 2);
+    margin-left: -($size / 2);
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    border-color: currentColor transparent transparent;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 0 0 1px transparent;
+    animation: button-spin 0.6s linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+/*
+** Cover
+**/
+@mixin cover($offset: 0) {
+  position: absolute;
+  top: $offset;
+  bottom: $offset;
+  left: $offset;
+  right: $offset;
+}
+
+/*
+** Clearfix
+**/
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+/*
+** Asset URL builder
+**
+** @param {String} $type - Asset type, matching folder name
+** @param {String} $file - Asset file name, including extension
+** @return {URL} - A `url()` function leading to the asset
+** @require {Variable} $base-path
+**/
+@function asset($type, $file) {
+  @return url($base-path + '/' + $type + '/' + $file);
+}
+
+/*
+** Image asset helper
+**
+** @param {String} $file - Asset file name, including extension
+** @return {URL} - A `url()` function leading to the image
+** @require {Function} asset
+**/
+@function image($file) {
+  @return asset('images', $file);
+}
+
+/*
+** Font asset helper
+**
+** @param {String} $file - Asset file name, including extension
+** @return {URL} - A `url()` function leading to the font
+** @require {Function} asset
+**/
+@function font($file) {
+  @return asset('fonts', $file);
+}
+
+/*
+** Mix color with black
+**
+** @param {Color} $color - Color hex value
+** @return {Percent} $weight - The relative weight of black color
+** @require {Function} mix
+**/
+@function blacken($color, $weight) {
+  @return mix($color-black, $color, $weight);
+}
+
+/*
+** Mix color with white
+**
+** @param {Color} $color - Color hex value
+** @return {Percent} $weight - The relative weight of white color
+** @require {Function} mix
+**/
+@function whiten($color, $weight) {
+  @return mix($color-white, $color, $weight);
+}

@@ -1,0 +1,34 @@
+/*
+** Module - Button
+** -----------------------------------------------------------------------------*/
+
+.button {
+  display: inline-block;
+  padding: 8px 25px;
+  border: 1px solid transparent;
+  border-radius: 1.1em;
+  font-size: 1.4rem;
+  line-height: 1;
+
+  &_primary {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &:hover {
+      background-color: transparent;
+      border-color: currentColor;
+      color: $color-primary;
+    }
+  }
+
+  &_secondary {
+    border-color: currentColor;
+    color: $color-primary;
+
+    &:hover {
+      background-color: $color-primary;
+      border-color: transparent;
+      color: $color-white;
+    }
+  }
+}

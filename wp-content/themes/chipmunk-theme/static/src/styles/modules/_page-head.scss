@@ -1,0 +1,72 @@
+/*
+** Module - Page head
+** -----------------------------------------------------------------------------*/
+
+.page-head {
+  @include bordered-box;
+  z-index: $zindex-head;
+  margin-bottom: -1px;
+  padding-top: $separator * 0.5;
+  padding-bottom: $separator * 0.5;
+  background-color: $color-white;
+
+  @include breakpoint(md) {
+    padding-top: $separator;
+    padding-bottom: $separator;
+  }
+
+  @include breakpoint(lg) {
+    padding-top: $separator * 1.5;
+    padding-bottom: $separator * 1.5;
+  }
+}
+
+.page-head__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+}
+
+.page-head__logo {
+  color: $color-primary;
+  font-weight: bold;
+
+  a {
+    display: block;
+
+    &:hover {
+      color: $color-black;
+    }
+  }
+
+  img {
+    display: inline-block;
+    max-height: 40px;
+    max-width: 180px;
+    vertical-align: middle;
+  }
+}
+
+.page-head__cta {
+  display: flex;
+  align-items: center;
+
+  button:not(:first-child) {
+    margin-left: 1.5rem;
+
+    @include breakpoint(md) {
+      margin-left: 2.5rem;
+    }
+  }
+}
+
+.page-head__search {
+  display: block;
+  font-size: 2.2rem;
+  line-height: 1;
+
+  &:hover {
+    color: $color-black;
+  }
+}

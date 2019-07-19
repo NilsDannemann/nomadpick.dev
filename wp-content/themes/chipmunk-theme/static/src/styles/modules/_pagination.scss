@@ -1,0 +1,78 @@
+/*
+** Module - Pagination
+** -----------------------------------------------------------------------------*/
+
+.pagination {
+  color: $color-black;
+  margin-top: -($separator);
+
+  @include breakpoint(md) {
+    margin-top: -($separator * 2.5);
+  }
+
+  &:first-child:last-child {
+    margin-top: 0;
+
+    @include breakpoint(md) {
+      margin-top: 0;
+    }
+  }
+
+  &:not(:first-child) {
+    margin-top: $separator;
+
+    @include breakpoint(md) {
+      margin-top: $separator * 1.5;
+    }
+  }
+}
+
+.pagination__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination__title {
+  color: $color-gray;
+}
+
+.pagination__item {
+  width: 25%;
+
+  &:first-child {
+    margin-right: $separator;
+
+    .icon {
+      margin-right: 0.75em;
+    }
+  }
+
+  &:last-child {
+    margin-left: $separator;
+    text-align: right;
+
+    .icon {
+      margin-left: 0.75em;
+    }
+  }
+
+  a {
+    display: block;
+    vertical-align: middle;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  .icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    vertical-align: middle;
+  }
+
+  &_disabled {
+    visibility: hidden;
+  }
+}

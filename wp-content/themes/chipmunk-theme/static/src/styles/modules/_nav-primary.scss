@@ -1,0 +1,161 @@
+/*
+** Module - Nav primary
+** -----------------------------------------------------------------------------*/
+
+.nav-primary {
+  @include cover;
+  position: fixed;
+  z-index: $zindex-nav;
+  background-color: $color-white;
+  opacity: 0;
+  transform: translateY(-10%);
+  pointer-events: none;
+  transition: opacity, transform;
+  transition-duration: $transition-speed * 2;
+
+  .admin-bar & {
+    top: 46px;
+
+    @media screen and (min-width: 783px) {
+      top: 32px;
+    }
+  }
+
+  .has-nav-open & {
+    opacity: 1;
+    transform: none;
+    pointer-events: all;
+  }
+
+  @include breakpoint(lg) {
+    position: relative;
+    z-index: $zindex-base;
+    flex: 1;
+    background-color: transparent;
+    opacity: 1;
+    transform: none;
+    transition: none;
+    pointer-events: all;
+
+    .admin-bar & {
+      top: auto;
+    }
+  }
+}
+
+.nav-primary__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+
+  @include breakpoint(lg) {
+    display: block;
+    height: auto;
+    text-align: left;
+  }
+}
+
+.nav-primary__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @include breakpoint(lg) {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  ul {
+    font-size: 0.8em;
+
+    @media (min-height: 300px) {
+      margin-top: 1rem;
+    }
+
+    @media (min-height: 400px) {
+      margin-top: 2rem;
+    }
+
+    @media (min-height: 600px) {
+      margin-top: 3rem;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 0;
+      font-size: 0.9em;
+    }
+
+    li {
+      padding: 0.25em 0;
+    }
+  }
+}
+
+.nav-primary__item {
+  font-size: 2rem;
+
+  @include breakpoint(lg) {
+    margin-left: 4rem;
+    font-size: 1.6rem;
+  }
+
+  &:not(:first-child) {
+    @media (min-height: 300px) {
+      margin-top: 1rem;
+    }
+
+    @media (min-height: 400px) {
+      margin-top: 2rem;
+    }
+
+    @media (min-height: 600px) {
+      margin-top: 3rem;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 0;
+    }
+  }
+
+  a {
+    display: block;
+
+    &:hover {
+      color: $color-black;
+    }
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  &_active {
+    color: $color-black;
+  }
+}
+
+.nav-primary__close {
+  position: absolute;
+  top: $separator;
+  right: $separator;
+  display: block;
+  padding: 1rem;
+  margin: -1rem;
+  color: $color-black;
+  font-size: 2.2rem;
+  line-height: 1;
+
+  @include breakpoint(md) {
+    top: $separator * 2;
+    right: $separator * 2;
+    font-size: 2.4rem;
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+}

@@ -1,0 +1,84 @@
+/*
+** Module - Section
+** -----------------------------------------------------------------------------*/
+
+.section {
+  padding-top: $separator * 2;
+  padding-bottom: $separator * 2;
+
+  @include breakpoint(md) {
+    padding-top: $separator * 4;
+    padding-bottom: $separator * 4;
+  }
+
+  &_compact {
+    padding-top: $separator;
+    padding-bottom: $separator;
+
+    @include breakpoint(md) {
+      padding-top: $separator * 2;
+      padding-bottom: $separator * 2;
+    }
+  }
+
+  &_double {
+    @include breakpoint(lg) {
+      padding-top: $separator * 8;
+      padding-bottom: $separator * 8;
+    }
+  }
+
+  &_compact-bottom {
+    padding-bottom: 1em;
+  }
+
+  &_theme-light {
+    @include bordered-box;
+    background-color: $color-white;
+  }
+
+  &_theme-primary {
+    background-color: $color-primary;
+    color: $color-white;
+
+    .heading,
+    .button_secondary,
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    textarea {
+      &,
+      &::placeholder {
+        color: $color-white;
+      }
+    }
+
+    .button_secondary:hover {
+      background-color: $color-white;
+      color: $color-primary;
+    }
+  }
+}
+
+.section__title {
+  color: $color-black;
+  font-size: 3.6rem;
+  font-weight: bold;
+  line-height: 1.2;
+
+  @include breakpoint(md) {
+    font-size: 4.8rem;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 5.2rem;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: $separator * 2;
+
+    @include breakpoint(md) {
+      margin-bottom: $separator * 4;
+    }
+  }
+}

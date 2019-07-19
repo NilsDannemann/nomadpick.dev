@@ -1,0 +1,44 @@
+/*
+** Module - Card
+** -----------------------------------------------------------------------------*/
+
+.card {
+  margin-top: $separator;
+}
+
+.card__image {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: 70%;
+  }
+}
+
+.card__title {
+  margin-top: $separator;
+  color: $color-black;
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1.4;
+
+  @include breakpoint(md) {
+    font-size: 2.2rem;
+  }
+}
+
+.card__copy {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  opacity: 0.85;
+}
+
+.card__handle {
+  &:hover {
+    color: $color-black;
+  }
+}

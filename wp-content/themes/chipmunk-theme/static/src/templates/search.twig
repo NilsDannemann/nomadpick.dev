@@ -1,0 +1,22 @@
+{% extends 'layouts/default.twig' %}
+{% set pageName = 'Search' %}
+
+{% block content %}
+
+  <div class="section section_compact-bottom">
+    <div class="container">
+      <h3 class="heading heading_md"><small>Search results for:</small> startup</h3>
+    </div>
+  </div>
+  <!-- /.section -->
+
+  {% for i in 1..3 %}
+    {% include 'sections/resource.twig' %}
+  {% endfor %}
+
+  <div class="section">
+    {% include 'sections/pagination.twig' %}
+  </div>
+  <!-- /.section -->
+
+{% endblock %}

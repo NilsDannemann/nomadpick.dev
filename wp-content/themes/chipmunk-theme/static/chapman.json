@@ -1,0 +1,16 @@
+{
+  "source": "src",
+  "proxy": "internetcurated.dev",
+  "targets": [
+    {
+      "path": "dist",
+      "tasks": [
+        "assets",
+        "icons",
+        "scripts",
+        "styles",
+        "templates"
+      ]
+    }
+  ]
+}
